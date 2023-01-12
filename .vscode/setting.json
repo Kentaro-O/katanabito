@@ -437,7 +437,7 @@
                         "                        },",
                         "                        {",
                         "                            \"function\": \"minecraft:set_nbt\",",
-                        "                            \"tag\": \"{Charged: 1b, CustomModelData: %ModelNum%, HideFlags: 127, Unbreakable: 1b, Data: {Id: &IdNum&b}}\"",
+                        "                            \"tag\": \"{Charged: 1b, CustomModelData: %ModelNum%, HideFlags: 127, Unbreakable: 1b, Data: {Id: %IdNum%b}}\"",
                         "                        },",
                         "                        {",
                         "                            \"function\": \"minecraft:set_attributes\",",
@@ -462,6 +462,20 @@
                         "    ]",
                         "}"
                     ]
+                },
+                {
+                    "type": "file",
+                    "rel": "document/weapon_data.json",
+                    "content": {
+                        "values": ""
+                    },
+                    "append": {
+                        "addFirst": false,
+                        "key": "WeaponData",
+                        "elem": [
+                            "{%namespace%: [{\"ModelNumber\": %ModelNum%}, {\"IdNumber\": %IdNum%}]}"
+                        ]
+                    }
                 }
             ],
             "customQuestion": [
@@ -472,7 +486,7 @@
                     "patternErrorMessage": "数値を入力してください"
                 },
                 {
-                    "name": "IDNum",
+                    "name": "IdNum",
                     "question": "刀のID",
                     "pattern": "[1-9][0-9]*",
                     "patternErrorMessage": "数値を入力してください"
