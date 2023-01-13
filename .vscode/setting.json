@@ -408,70 +408,25 @@
     },
     "mcdutil.createDatapackTemplate.customTemplate": [
         {
-            "label": "刀/テンプレート",
+            "label": "鉱石/テンプレート",
             "picked": true,
             "generates": [
                 {
                     "type": "file",
-                    "rel": "data/asset/loot_tables/katana/%namespace%.json",
+                    "rel": "data/asset/loot_tables/ore/%namespace%.json",
                     "content": [
-                        "{",
-                        "    \"pools\": [",
-                        "        {",
-                        "            \"rolls\": 1,",
-                        "            \"entries\": [",
-                        "                {",
-                        "                    \"type\": \"minecraft:item\",",
-                        "                    \"name\": \"minecraft:crossbow\",",
-                        "                    \"functions\": [",
-                        "                        {",
-                        "                            \"function\": \"minecraft:set_name\",",
-                        "                            \"entity\": \"this\",",
-                        "                            \"name\": [",
-                        "                                {",
-                        "                                    \"text\": \"%namespace%\",",
-                        "                                    \"bold\": true,",
-                        "                                    \"italic\": false",
-                        "                                }",
-                        "                            ]",
-                        "                        },",
-                        "                        {",
-                        "                            \"function\": \"minecraft:set_nbt\",",
-                        "                            \"tag\": \"{Charged: 1b, CustomModelData: %ModelNum%, HideFlags: 127, Unbreakable: 1b, Data: {Id: %IdNum%b}}\"",
-                        "                        },",
-                        "                        {",
-                        "                            \"function\": \"minecraft:set_attributes\",",
-                        "                            \"modifiers\": [",
-                        "                                {",
-                        "                                    \"attribute\": \"minecraft:generic.attack_damage\",",
-                        "                                    \"name\": \"\",",
-                        "                                    \"amount\": 0,",
-                        "                                    \"operation\": \"addition\",",
-                        "                                    \"slot\": \"mainhand\"",
-                        "                                }",
-                        "                            ]",
-                        "                        },",
-                        "                        {",
-                        "                            \"function\": \"minecraft:set_count\",",
-                        "                            \"count\": 1",
-                        "                        }",
-                        "                    ]",
-                        "                }",
-                        "            ]",
-                        "        }",
-                        "    ]",
-                        "}"
+                        ""
                     ]
                 },
                 {
                     "type": "file",
-                    "rel": "document/weapon_data.json",
+                    "rel": "document/ore_data.json",
                     "content": {
                         "values": ""
                     },
                     "append": {
                         "addFirst": false,
-                        "key": "WeaponData",
+                        "key": "OreData",
                         "elem": [
                             "{%namespace%: [{\"ModelNumber\": %ModelNum%}, {\"IdNumber\": %IdNum%}]}"
                         ]
