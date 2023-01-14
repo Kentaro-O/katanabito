@@ -569,7 +569,89 @@
                 },
                 {
                     "name": "IdNum",
-                    "question": "刀のID",
+                    "question": "鉱石のID",
+                    "pattern": "[1-9][0-9]*",
+                    "patternErrorMessage": "数値を入力してください"
+                }
+            ]
+        },
+
+        {
+            "label": "作物/テンプレート",
+            "picked": true,
+            "generates": [
+                {
+                    "type": "file",
+                    "rel": "data/asset/loot_tables/farming/%namespace%.json",
+                    "content": [
+                        "{",
+                        "    \"pools\": [",
+                        "        {",
+                        "            \"rolls\": 1,",
+                        "            \"entries\": [",
+                        "                {",
+                        "                    \"type\": \"minecraft:item\",",
+                        "                    \"name\": \"minecraft:black_dye\",",
+                        "                    \"functions\": [",
+                        "                        {",
+                        "                            \"function\": \"minecraft:set_name\",",
+                        "                            \"entity\": \"this\",",
+                        "                            \"name\": [",
+                        "                                {",
+                        "                                    \"text\": \"%namespace%\",",
+                        "                                    \"bold\": true,",
+                        "                                    \"italic\": false",
+                        "                                }",
+                        "                            ]",
+                        "                        },",
+                        "                        {",
+                        "                            \"function\": \"minecraft:set_lore\",",
+                        "                            \"entity\": \"this\",",
+                        "                            \"lore\": [",
+                        "                                {",
+                        "                                    \"text\": \"\",",
+                        "                                    \"bold\": true,",
+                        "                                    \"italic\": false",
+                        "                                }",
+                        "                            ]",
+                        "                        },",
+                        "                        {",
+                        "                            \"function\": \"minecraft:set_nbt\",",
+                        "                            \"tag\": \"{CustomModelData: %ModelNum%, HideFlags: 127, Data: {Id: %IdNum%b}}\"",
+                        "                        }",
+                        "                    ]",
+                        "                }",
+                        "            ]",
+                        "        }",
+                        "    ]",
+                        "}"
+                    ]
+                },
+                {
+                    "type": "file",
+                    "rel": "document/farming_data.json",
+                    "content": {
+                        "values": ""
+                    },
+                    "append": {
+                        "addFirst": false,
+                        "key": "FarmingData",
+                        "elem": [
+                            "{%namespace%: [{\"ModelNumber\": %ModelNum%}, {\"IdNumber\": %IdNum%}]}"
+                        ]
+                    }
+                }
+            ],
+            "customQuestion": [
+                {
+                    "name": "ModelNum",
+                    "question": "ModelのID",
+                    "pattern": "[1-9][0-9]*",
+                    "patternErrorMessage": "数値を入力してください"
+                },
+                {
+                    "name": "IdNum",
+                    "question": "作物のID",
                     "pattern": "[1-9][0-9]*",
                     "patternErrorMessage": "数値を入力してください"
                 }
