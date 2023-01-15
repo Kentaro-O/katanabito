@@ -348,6 +348,11 @@
         "prefer double"
     ],
     "datapack.lint.timeOmitTickUnit": false,
+    "datapack.snippets": {
+        "SummonAec": "summon minecraft:area_effect_cloud ~ ~ ~ {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: [\"${1:tag}\"]}",
+
+        "Teleport": "tp @a ${1:0} ${2:0} ${2:0}"
+    },
     "mcdutil.createFile.fileTemplate": {
         "function": [
             "#> %fileResourcePath%",
